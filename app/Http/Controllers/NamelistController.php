@@ -8,10 +8,10 @@ class NamelistController extends Controller
 {
 	public function index()
 	{
-		$name = \DB::query('select * from name');
-		foreach ($name as $key => $n) {
-			$var = $n->name;
-		}
-		return view('welcome',compact('var'));
+		
+		$data['data'] = \DB::table('name')->get();
+
+		return view('welcome', $data);
+		//return view('welcome',$n);
 	}
 }

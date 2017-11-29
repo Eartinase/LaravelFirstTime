@@ -6,13 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class NameList extends Model
 {
-    protected $table = 'name';
+	protected $table = 'name';
 
 
-    public function index()
-    {
-    	//$name = name::all();
-    	return "test";
-    }
-    
+	public function index()
+	{
+		foreach ($name as $n) {
+			echo $n->Name;
+		}
+	}
+
 }
